@@ -5,41 +5,42 @@ import com.work.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.io.Closeable;
+import java.io.IOException;
 import java.util.List;
 
-public class CountryDaoImpl implements CountryDao {
+public class CountryDaoImpl implements CountryDao, Closeable {
 
-    public List<CountryEntity> getAll() throws DaoException {
-        Session session = HibernateUtil.getSessionFactory().getCurrentSession();
-        session.beginTransaction();
-        return (List<CountryEntity>) HibernateUtil.getSessionFactory().openSession()
-                .createQuery("From CountryEntity ").list();
+    private Session session;
+    private Transaction transaction;
+
+    public CountryDaoImpl() throws DaoException {
+        session = HibernateUtil.getSessionFactory().openSession();
+        transaction = session.beginTransaction();
     }
 
-    public void update(CountryEntity countryEntity) throws DaoException {
-        try {
-            Session session = HibernateUtil.getSessionFactory().openSession();
-            Transaction transaction = session.beginTransaction();
+    public List<CountryEntity> getAll() {
+        List<CountryEntity> countryEntities = (List<CountryEntity>) session.createQuery("From CountryEntity ").list();
+        return countryEntities;
+    }
+
+    public void update(CountryEntity countryEntity) {
             session.update(countryEntity);
             transaction.commit();
-            session.close();
-        } catch (Exception e){
-            throw new DaoException("Some error in update method", e);
-        }
     }
 
     public void delete(String name) throws DaoException {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
         session.delete(name);
         transaction.commit();
-        session.close();
     }
 
     public void insert(CountryEntity countryEntity) throws DaoException {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
         session.save(countryEntity);
+        transaction.commit();
+    }
+
+    @Override
+    public void close() throws IOException {
         transaction.commit();
         session.close();
     }

@@ -3,7 +3,7 @@ package com.work.dao;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "country", schema = "cities")
+@Table(name = "country")
 public class CountryEntity {
     private String code;
     private String name;
