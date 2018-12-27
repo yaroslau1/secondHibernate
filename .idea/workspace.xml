@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1f7943ba-c8fc-4f77-b6d6-a8aa13010683" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/work/dao/CountryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/dao/CountryDaoImpl.java" afterDir="false" />
-    </list>
+    <list default="true" id="1f7943ba-c8fc-4f77-b6d6-a8aa13010683" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,8 +117,8 @@
       <file leaf-file-name="CountryDaoImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/work/dao/CountryDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+            <state relative-caret-position="136">
+              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -395,7 +393,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1545891980094</updated>
-      <workItem from="1545891986880" duration="13453000" />
+      <workItem from="1545891986880" duration="14216000" />
     </task>
     <task id="LOCAL-00001" summary="project added">
       <created>1545905086869</created>
@@ -404,11 +402,18 @@
       <option name="project" value="LOCAL" />
       <updated>1545905086869</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="some changes 1.0">
+      <created>1545908003300</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1545908003301</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13453000" />
+    <option name="totallyTimeSpent" value="14216000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -435,7 +440,7 @@
       <window_info anchor="bottom" id="Run" order="9" sideWeight="0.4987775" visible="true" weight="0.32997763" />
       <window_info anchor="bottom" id="Terminal" order="1" />
       <window_info id="Persistence" order="0" sideWeight="0.50111854" side_tool="true" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="5" sideWeight="0.49888143" visible="true" weight="0.21393643" />
+      <window_info active="true" content_ui="combo" id="Project" order="5" sideWeight="0.49888143" visible="true" weight="0.21393643" />
       <window_info anchor="right" id="Theme Preview" order="4" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Database Console" order="4" weight="0.32997763" />
@@ -455,7 +460,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="project added" />
-    <option name="LAST_COMMIT_MESSAGE" value="project added" />
+    <MESSAGE value="some changes 1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes 1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -567,10 +573,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/work/dao/CountryDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="52" selection-start-line="15" selection-start-column="52" selection-end-line="15" selection-end-column="52" />
+        <state relative-caret-position="136">
+          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
