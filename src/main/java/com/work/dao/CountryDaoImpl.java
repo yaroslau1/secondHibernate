@@ -17,11 +17,15 @@ public class CountryDaoImpl implements CountryDao {
     }
 
     public void update(CountryEntity countryEntity) throws DaoException {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        Transaction transaction = session.beginTransaction();
-        session.update(countryEntity);
-        transaction.commit();
-        session.close();
+        try {
+            Session session = HibernateUtil.getSessionFactory().openSession();
+            Transaction transaction = session.beginTransaction();
+            session.update(countryEntity);
+            transaction.commit();
+            session.close();
+        } catch (Exception e){
+            throw new DaoException("Some error in update method", e);
+        }
     }
 
     public void delete(String name) throws DaoException {
