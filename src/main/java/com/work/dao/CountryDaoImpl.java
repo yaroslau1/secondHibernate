@@ -41,7 +41,6 @@ public class CountryDaoImpl implements CountryDao, Closeable {
 
     @Override
     public void close() throws IOException {
-        transaction.commit();
         session.close();
     }
 }
