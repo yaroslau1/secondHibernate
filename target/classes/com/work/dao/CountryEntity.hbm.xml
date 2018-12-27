@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="com.work.dao.CountryEntity" table="country" schema="cities">
+        <id name="code">
+            <column name="Code" sql-type="char(3)" length="3"/>
+        </id>
+        <property name="name">
+            <column name="Name" sql-type="char(52)" length="52"/>
+        </property>
+        <property name="population">
+            <column name="Population" sql-type="int(11)"/>
+        </property>
+        <property name="capital">
+            <column name="Capital" sql-type="int(11)" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
