@@ -22,7 +22,6 @@ public class CountryDaoImpl implements CountryDao, Closeable {
         }catch(Exception e){
         throw new DaoException("Some problems with constructor", e);
         }
-
     }
 
     public List<CountryEntity> getAll() throws DaoException {
@@ -32,7 +31,6 @@ public class CountryDaoImpl implements CountryDao, Closeable {
         } catch (Exception e) {
             throw new DaoException("Some problems with getAll", e);
         }
-
     }
 
     public void update(CountryEntity countryEntity) throws DaoException {

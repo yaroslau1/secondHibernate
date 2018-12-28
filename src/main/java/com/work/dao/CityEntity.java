@@ -3,11 +3,21 @@ package com.work.dao;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "city", schema = "cities", catalog = "")
+@Table(name = "city")
 public class CityEntity {
     private int id;
     private String name;
     private int population;
+
+    public CityEntity(){}
+
+
+
+    public CityEntity(int id, String name, int population){
+        this.id = id;
+        this.name = name;
+        this.population = population;
+    }
 
     @Id
     @Column(name = "ID", nullable = false)
@@ -59,5 +69,10 @@ public class CityEntity {
         result = 31 * result + (name != null ? name.hashCode() : 0);
         result = 31 * result + population;
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return id + " " + name + " " + population;
     }
 }

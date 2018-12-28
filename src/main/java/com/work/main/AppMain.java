@@ -12,7 +12,7 @@ import java.util.List;
 public class AppMain {
 
     public static void main(String[] args) {
-        CountryEntity countryEntity = new CountryEntity("UKR", "Ukraine", 16000000, 1);
+        CountryEntity countryEntity = new CountryEntity("UKR", "Ukraine", 16000000, 2);
         try (CountryDaoImpl countryDao = new CountryDaoImpl()){
             countryDao.update(countryEntity);
             System.out.println(countryDao.getAll());
