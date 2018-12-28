@@ -15,28 +15,62 @@ public class CountryDaoImpl implements CountryDao, Closeable {
     private Transaction transaction;
 
     public CountryDaoImpl() throws DaoException {
-        session = HibernateUtil.getSessionFactory().openSession();
-        transaction = session.beginTransaction();
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+        }catch(Exception e){
+        if(transaction != null){
+            transaction.rollback();
+        }
+        throw new DaoException("Some problems with update", e);
     }
 
-    public List<CountryEntity> getAll() {
-        List<CountryEntity> countryEntities = (List<CountryEntity>) session.createQuery("From CountryEntity ").list();
-        return countryEntities;
     }
 
-    public void update(CountryEntity countryEntity) {
+    public List<CountryEntity> getAll() throws DaoException {
+        try {
+            List<CountryEntity> countryEntities = (List<CountryEntity>) session.createQuery("From CountryEntity ").list();
+            return countryEntities;
+        } catch (Exception e) {
+            throw new DaoException("Some problems with update", e);
+        }
+
+    }
+
+    public void update(CountryEntity countryEntity) throws DaoException {
+        try {
             session.update(countryEntity);
             transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            throw new DaoException("Some problems with update", e);
+        }
     }
 
     public void delete(String name) throws DaoException {
-        session.delete(name);
-        transaction.commit();
+        try {
+            session.delete(name);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            throw new DaoException("Some problems with update", e);
+        }
     }
 
     public void insert(CountryEntity countryEntity) throws DaoException {
-        session.save(countryEntity);
-        transaction.commit();
+        try {
+            session.save(countryEntity);
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            throw new DaoException("Some problems with update", e);
+        }
     }
 
     @Override
