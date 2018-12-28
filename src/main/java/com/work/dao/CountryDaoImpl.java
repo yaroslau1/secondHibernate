@@ -17,13 +17,9 @@ public class CountryDaoImpl implements CountryDao, Closeable {
     public CountryDaoImpl() throws DaoException {
         try {
             session = HibernateUtil.getSessionFactory().openSession();
-            transaction = session.beginTransaction();
         }catch(Exception e){
-        if(transaction != null){
-            transaction.rollback();
-        }
         throw new DaoException("Some problems with constructor", e);
-    }
+        }
 
     }
 
@@ -39,6 +35,7 @@ public class CountryDaoImpl implements CountryDao, Closeable {
 
     public void update(CountryEntity countryEntity) throws DaoException {
         try {
+            transaction = session.beginTransaction();
             session.update(countryEntity);
             transaction.commit();
         } catch (Exception e) {
@@ -51,6 +48,7 @@ public class CountryDaoImpl implements CountryDao, Closeable {
 
     public void delete(String name) throws DaoException {
         try {
+            transaction = session.beginTransaction();
             session.delete(name);
             transaction.commit();
         } catch (Exception e) {
@@ -63,6 +61,7 @@ public class CountryDaoImpl implements CountryDao, Closeable {
 
     public void insert(CountryEntity countryEntity) throws DaoException {
         try {
+            transaction = session.beginTransaction();
             session.save(countryEntity);
             transaction.commit();
         } catch (Exception e) {
