@@ -4,10 +4,6 @@
     <list default="true" id="1f7943ba-c8fc-4f77-b6d6-a8aa13010683" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/work/dao/CountryDaoImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/work/dao/CountryDaoImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/work/dao/CountryDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/work/dao/CountryDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/work/dao/CountryDaoImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/work/dao/CountryDaoImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/work/dao/CountryEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/work/dao/CountryEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/work/main/AppMain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/work/main/AppMain.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -95,8 +91,8 @@
       <file leaf-file-name="CountryDaoImpl.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/work/dao/CountryDaoImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+            <state relative-caret-position="680">
+              <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -113,7 +109,7 @@
       <file leaf-file-name="CountryEntity.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/work/dao/CountryEntity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
+            <state relative-caret-position="935">
               <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
             </state>
           </provider>
@@ -372,7 +368,7 @@
       <option name="presentableId" value="Default" />
       <updated>1545891980094</updated>
       <workItem from="1545891986880" duration="19057000" />
-      <workItem from="1545976272741" duration="1201000" />
+      <workItem from="1545976272741" duration="7172000" />
     </task>
     <task id="LOCAL-00001" summary="project added">
       <created>1545905086869</created>
@@ -402,11 +398,32 @@
       <option name="project" value="LOCAL" />
       <updated>1545915273322</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="some changes 1.4">
+      <created>1545977506447</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1545977506448</updated>
+    </task>
+    <task id="LOCAL-00006" summary="some changes 1.5">
+      <created>1545977633109</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1545977633109</updated>
+    </task>
+    <task id="LOCAL-00007" summary="some changes 1.6">
+      <created>1545988773966</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1545988773966</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20258000" />
+    <option name="totallyTimeSpent" value="26229000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
@@ -456,11 +473,14 @@
     <MESSAGE value="some changes 1.0" />
     <MESSAGE value="some changes 1.2" />
     <MESSAGE value="some changes 1.3" />
-    <option name="LAST_COMMIT_MESSAGE" value="some changes 1.3" />
+    <MESSAGE value="some changes 1.4" />
+    <MESSAGE value="some changes 1.5" />
+    <MESSAGE value="some changes 1.6" />
+    <option name="LAST_COMMIT_MESSAGE" value="some changes 1.6" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -574,9 +594,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/work/dao/CountryDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.4.0.Final/hibernate-core-5.4.0.Final.jar!/org/hibernate/SharedSessionContract.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/work/dao/CountryEntity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
+        <state relative-caret-position="935">
           <caret line="71" column="9" selection-start-line="71" selection-start-column="9" selection-end-line="71" selection-end-column="9" />
         </state>
       </provider>
@@ -588,17 +622,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/work/dao/CountryDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/work/dao/CountryDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="680">
+          <caret line="49" column="13" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
         </state>
       </provider>
     </entry>

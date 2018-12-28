@@ -4,7 +4,9 @@ import com.work.exception.DaoException;
 import com.work.utils.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.infinispan.persistence.spi.PersistenceException;
 
+import javax.transaction.Transactional;
 import java.io.Closeable;
 import java.io.IOException;
 import java.util.List;
@@ -39,8 +41,12 @@ public class CountryDaoImpl implements CountryDao, Closeable {
             session.update(countryEntity);
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
+            if (transaction != null && transaction.isActive()) {
+                try {
+                    transaction.rollback();
+                } catch(PersistenceException ex){
+                    ex.addSuppressed(e);
+                }
             }
             throw new DaoException("Some problems with update", e);
         }
@@ -52,8 +58,12 @@ public class CountryDaoImpl implements CountryDao, Closeable {
             session.delete(name);
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
+            if (transaction != null && transaction.isActive()) {
+                try {
+                    transaction.rollback();
+                } catch(PersistenceException ex){
+                    ex.addSuppressed(e);
+                }
             }
             throw new DaoException("Some problems with delete", e);
         }
@@ -65,8 +75,12 @@ public class CountryDaoImpl implements CountryDao, Closeable {
             session.save(countryEntity);
             transaction.commit();
         } catch (Exception e) {
-            if (transaction != null) {
-                transaction.rollback();
+            if (transaction != null && transaction.isActive()) {
+                try {
+                    transaction.rollback();
+                } catch(PersistenceException ex){
+                    ex.addSuppressed(e);
+                }
             }
             throw new DaoException("Some problems with insert", e);
         }
