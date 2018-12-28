@@ -22,7 +22,7 @@ public class CountryDaoImpl implements CountryDao, Closeable {
         if(transaction != null){
             transaction.rollback();
         }
-        throw new DaoException("Some problems with update", e);
+        throw new DaoException("Some problems with constructor", e);
     }
 
     }
@@ -32,7 +32,7 @@ public class CountryDaoImpl implements CountryDao, Closeable {
             List<CountryEntity> countryEntities = (List<CountryEntity>) session.createQuery("From CountryEntity ").list();
             return countryEntities;
         } catch (Exception e) {
-            throw new DaoException("Some problems with update", e);
+            throw new DaoException("Some problems with getAll", e);
         }
 
     }
@@ -57,7 +57,7 @@ public class CountryDaoImpl implements CountryDao, Closeable {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new DaoException("Some problems with update", e);
+            throw new DaoException("Some problems with delete", e);
         }
     }
 
@@ -69,7 +69,7 @@ public class CountryDaoImpl implements CountryDao, Closeable {
             if (transaction != null) {
                 transaction.rollback();
             }
-            throw new DaoException("Some problems with update", e);
+            throw new DaoException("Some problems with insert", e);
         }
     }
 
