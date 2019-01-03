@@ -6,9 +6,9 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.infinispan.persistence.spi.PersistenceException;
 
-import javax.transaction.Transactional;
 import java.io.Closeable;
 import java.io.IOException;
+import java.sql.Savepoint;
 import java.util.List;
 
 public class CountryDaoImpl implements CountryDao, Closeable {
@@ -58,10 +58,10 @@ public class CountryDaoImpl implements CountryDao, Closeable {
         }
     }
 
-    public void delete(String name) throws DaoException {
+    public void delete(CountryEntity countryEntity) throws DaoException {
         try {
             transaction = session.beginTransaction();
-            session.delete(name);
+            session.delete(countryEntity);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null && transaction.isActive()) {

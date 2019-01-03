@@ -1,6 +1,5 @@
 package com.work.utils;
 
-import com.fasterxml.classmate.AnnotationConfiguration;
 import com.work.dao.CityEntity;
 import com.work.dao.CountryEntity;
 import com.work.dao.CountrylanguageEntity;
@@ -35,10 +34,11 @@ public class HibernateUtil {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration();
-                configuration.configure("hibernate-test.cfg.xml");
+
                 configuration.addAnnotatedClass(CityEntity.class);
                 configuration.addAnnotatedClass(CountryEntity.class);
                 configuration.addAnnotatedClass(CountrylanguageEntity.class);
+                configuration.configure("hibernate-test.cfg.xml");
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
 
                 sessionFactory = configuration.buildSessionFactory(builder.build());
