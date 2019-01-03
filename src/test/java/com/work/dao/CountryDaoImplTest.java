@@ -12,18 +12,13 @@ public class CountryDaoImplTest {
     private CountryDaoImpl countryDao;
 
     @Before
-    public void open() {
-        try {
-            countryDao = new CountryDaoImpl("test");
-        } catch (DaoException e) {
-            e.printStackTrace();
-        }
+    public void open() throws DaoException {
+            countryDao = new CountryDaoImpl("test");      
     }
 
     @Test
     public void getAll() throws DaoException {
         List<CountryEntity> countryEntities;
-
         countryEntities = countryDao.getAll();
         System.out.println(countryEntities);
         assertEquals("BLR", countryEntities.get(0).getCode());
@@ -32,25 +27,16 @@ public class CountryDaoImplTest {
         assertEquals("GDR", countryEntities.get(1).getCode());
         assertEquals("Germany", countryEntities.get(1).getName());
         assertEquals(123, countryEntities.get(1).getPopulation());
-
     }
 
     @After
-    public void close() {
-        try {
+    public void close() throws IOException {
             countryDao.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @Before
-    public void openUpdate() {
-        try {
+    public void openUpdate() throws DaoException {
             countryDao = new CountryDaoImpl("test");
-        } catch (DaoException e) {
-            e.printStackTrace();
-        }
     }
 
     @Test
@@ -66,21 +52,13 @@ public class CountryDaoImplTest {
     }
 
     @After
-    public void closeUpdate() {
-        try {
+    public void closeUpdate() throws IOException {
             countryDao.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @Before
-    public void openDelete() {
-        try {
+    public void openDelete() throws DaoException {
             countryDao = new CountryDaoImpl("test");
-        } catch (DaoException e) {
-            e.printStackTrace();
-        }
     }
 
     @Test
@@ -94,21 +72,13 @@ public class CountryDaoImplTest {
     }
 
     @After
-    public void closeDelete() {
-        try {
+    public void closeDelete() throws IOException {
             countryDao.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     @Before
-    public void openInsert() {
-        try {
+    public void openInsert() throws DaoException {
             countryDao = new CountryDaoImpl("test");
-        } catch (DaoException e) {
-            e.printStackTrace();
-        }
     }
 
     @Test
@@ -124,11 +94,7 @@ public class CountryDaoImplTest {
     }
 
     @After
-    public void closeInsert() {
-        try {
+    public void closeInsert() throws IOException {
             countryDao.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
