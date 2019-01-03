@@ -1,5 +1,6 @@
 package com.work.utils;
 
+import com.fasterxml.classmate.AnnotationConfiguration;
 import com.work.dao.CityEntity;
 import com.work.dao.CountryEntity;
 import com.work.dao.CountrylanguageEntity;
@@ -21,6 +22,25 @@ public class HibernateUtil {
                 configuration.addAnnotatedClass(CountryEntity.class);
                 configuration.addAnnotatedClass(CountrylanguageEntity.class);
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+                sessionFactory = configuration.buildSessionFactory(builder.build());
+            } catch (Exception e) {
+                e.printStackTrace();
+                //throw new DaoException(e);
+            }
+        }
+        return sessionFactory;
+    }
+
+    public static SessionFactory getSessionFactoryTest() throws DaoException {
+        if (sessionFactory == null) {
+            try {
+                Configuration configuration = new Configuration();
+                configuration.configure("hibernate-test.cfg.xml");
+                configuration.addAnnotatedClass(CityEntity.class);
+                configuration.addAnnotatedClass(CountryEntity.class);
+                configuration.addAnnotatedClass(CountrylanguageEntity.class);
+                StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());
+
                 sessionFactory = configuration.buildSessionFactory(builder.build());
             } catch (Exception e) {
                 e.printStackTrace();

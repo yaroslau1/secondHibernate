@@ -24,6 +24,14 @@ public class CountryDaoImpl implements CountryDao, Closeable {
         }
     }
 
+    public CountryDaoImpl(String string) throws DaoException {
+        try {
+            session = HibernateUtil.getSessionFactoryTest().openSession();
+        }catch(Exception e){
+            throw new DaoException("Some problems with constructor", e);
+        }
+    }
+
     public List<CountryEntity> getAll() throws DaoException {
         try {
             List<CountryEntity> countryEntities = (List<CountryEntity>) session.createQuery("From CountryEntity ").list();
