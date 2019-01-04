@@ -44,7 +44,7 @@ public class CountryDaoImpl implements CountryDao, Closeable {
     public void update(CountryEntity countryEntity) throws DaoException {
         try {
             transaction = session.beginTransaction();
-            session.update(countryEntity);
+            session.saveOrUpdate(countryEntity);
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null && transaction.isActive()) {
@@ -61,6 +61,7 @@ public class CountryDaoImpl implements CountryDao, Closeable {
     public void delete(CountryEntity countryEntity) throws DaoException {
         try {
             transaction = session.beginTransaction();
+            session.clear();
             session.delete(countryEntity);
             transaction.commit();
         } catch (Exception e) {
@@ -90,6 +91,14 @@ public class CountryDaoImpl implements CountryDao, Closeable {
             }
             throw new DaoException("Some problems with insert", e);
         }
+    }
+
+    public void create(CountryEntity countryEntity) throws DaoException {
+        transaction = session.beginTransaction();
+        session.persist(countryEntity);
+        transaction.commit();
+        System.out.println("successfully saved");
+
     }
 
     @Override

@@ -3,7 +3,7 @@ package com.work.dao;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "countrylanguage", schema = "cities", catalog = "")
+@Table(name = "countrylanguage")
 @IdClass(CountrylanguageEntityPK.class)
 public class CountrylanguageEntity {
     private String countryCode;

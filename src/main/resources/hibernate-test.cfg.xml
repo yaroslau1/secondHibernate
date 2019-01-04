@@ -6,7 +6,7 @@
     <session-factory>
         <property name="connection.url">jdbc:mysql://localhost:3306/cities1?verifyServerCertificate=false&amp;useSSL=false&amp;allowPublicKeyRetrieval=true&amp;requireSSL=false&amp;serverTimezone=UTC&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
         <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
-        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
         <property name="connection.username">root</property>
         <property name="connection.password">1234</property>
         <!-- JDBC connection pool (use the built-in) -->
@@ -14,15 +14,17 @@
 
         <!-- Enable Hibernate's automatic session context management -->
         <property name="current_session_context_class">thread</property>
+        <property name="hbm2ddl.auto">create-drop</property>
 
         <property name="connection.autocommit">true</property>
 
         <!-- Echo all executed SQL to stdou -->
         <property name="show_sql">true</property>
-        <mapping resource="com/work/dao/CityEntity.hbm.xml"/>
-        <mapping class="com.work.dao.CityEntity"/>
         <mapping resource="com/work/dao/CountryEntity.hbm.xml"/>
         <mapping class="com.work.dao.CountryEntity"/>
+        <mapping resource="com/work/dao/CityEntity.hbm.xml"/>
+        <mapping class="com.work.dao.CityEntity"/>
+
         <mapping resource="com/work/dao/CountrylanguageEntity.hbm.xml"/>
         <mapping class="com.work.dao.CountrylanguageEntity"/>
 

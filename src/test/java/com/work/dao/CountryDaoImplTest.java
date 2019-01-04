@@ -4,6 +4,7 @@ import com.work.exception.DaoException;
 import org.junit.*;
 
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 import static org.junit.Assert.*;
@@ -13,7 +14,7 @@ public class CountryDaoImplTest {
 
     @Before
     public void open() throws DaoException {
-            countryDao = new CountryDaoImpl("test");      
+        countryDao = new CountryDaoImpl("test");
     }
 
     @Test
@@ -30,7 +31,7 @@ public class CountryDaoImplTest {
     }
 
     @After
-    public void close() throws IOException {
+    public void close() throws DaoException, IOException {
             countryDao.close();
     }
 
@@ -46,9 +47,9 @@ public class CountryDaoImplTest {
         countryDao.update(countryEntity);
         countryEntities = countryDao.getAll();
         System.out.println(countryEntities);
-        assertEquals("GDR", countryEntities.get(1).getCode());
-        assertEquals("Germany", countryEntities.get(1).getName());
-        assertEquals(123, countryEntities.get(1).getPopulation());
+        assertEquals("GDR", countryEntities.get(0).getCode());
+        assertEquals("Germany", countryEntities.get(0).getName());
+        assertEquals(123, countryEntities.get(0).getPopulation());
     }
 
     @After

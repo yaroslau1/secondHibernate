@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.work.dao.CountrylanguageEntity" table="countrylanguage" schema="cities">
+    <class name="com.work.dao.CountrylanguageEntity" table="countrylanguage">
         <composite-id mapped="true" class="com.work.dao.CountrylanguageEntityPK">
             <key-property name="countryCode">
                 <column name="CountryCode" sql-type="char(3)" length="3"/>

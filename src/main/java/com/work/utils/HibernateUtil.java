@@ -34,9 +34,9 @@ public class HibernateUtil {
         if (sessionFactory == null) {
             try {
                 Configuration configuration = new Configuration();
-
-                configuration.addAnnotatedClass(CityEntity.class);
                 configuration.addAnnotatedClass(CountryEntity.class);
+                configuration.addAnnotatedClass(CityEntity.class);
+
                 configuration.addAnnotatedClass(CountrylanguageEntity.class);
                 configuration.configure("hibernate-test.cfg.xml");
                 StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties());

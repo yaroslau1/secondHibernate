@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="com.work.dao.CountryEntity" table="country" schema="cities">
+    <class name="com.work.dao.CountryEntity" table="country">
         <id name="code">
             <column name="Code" sql-type="char(3)" length="3"/>
         </id>
